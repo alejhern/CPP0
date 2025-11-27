@@ -19,7 +19,6 @@
 # include <iomanip>
 # include <iostream>
 # include <stdexcept>
-# include <string>
 typedef std::string string;
 
 class Contact
