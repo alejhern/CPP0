@@ -65,7 +65,14 @@ int	main(void)
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
 		if (command == "ADD")
+		{
+			if (phonebook.get_contact_count() >= MAX_CONTACTS)
+			{
+				std::cout << "Phonebook is full. Cannot add more contacts." << std::endl;
+				continue ;
+			}
 			phonebook.add_contact(create_contact());
+		}
 		else if (command == "SEARCH")
 			search_contact(phonebook);
 		else if (command == "EXIT")
