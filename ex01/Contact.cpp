@@ -14,13 +14,14 @@
 
 Contact::Contact(){};
 
-Contact::Contact(string fn, string ln, string nn, string pn)
+Contact::Contact(string fn, string ln, string nn, string pn, string ds)
 {
 	this->_first_name = fn;
 	this->_last_name = ln;
 	this->_nickname = nn;
 	this->_phone_number = pn;
-};
+	this->_darkest_secret = ds;
+}
 
 string Contact::get_first_name(void) const
 {
@@ -42,6 +43,11 @@ string Contact::get_phone_number(void) const
 	return (this->_phone_number);
 };
 
+string Contact::get_darkest_secret(void) const
+{
+	return (this->_darkest_secret);
+};
+
 void Contact::set_first_name(string fn)
 {
 	this->_first_name = fn;
@@ -60,4 +66,9 @@ void Contact::set_nickname(string nn)
 void Contact::set_phone_number(string pn)
 {
 	this->_phone_number = pn;
+};
+
+void Contact::set_darkest_secret(string ds)
+{
+	this->_darkest_secret = ds;
 };

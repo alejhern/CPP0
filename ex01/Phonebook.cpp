@@ -22,11 +22,11 @@ void Phonebook::add_contact(const Contact &contact)
 	this->_contacts[this->_contact_count % MAX_CONTACTS] = contact;
 	this->_contact_count++;
 };
-Contact Phonebook::get_contact(int index)
+Contact *Phonebook::get_contact(int index)
 {
 	if (index < 0 || index >= std::min(this->_contact_count, MAX_CONTACTS))
 		throw std::out_of_range("Index out of range");
-	return (this->_contacts[index]);
+	return (&this->_contacts[index]);
 };
 
 int Phonebook::get_contact_count(void) const
@@ -46,6 +46,7 @@ void Phonebook::display_contact(int index) const
 	std::cout << "Last Name: " << contact.get_last_name() << std::endl;
 	std::cout << "Nickname: " << contact.get_nickname() << std::endl;
 	std::cout << "Phone Number: " << contact.get_phone_number() << std::endl;
+	std::cout << "Darkest Secret: " << contact.get_darkest_secret() << std::endl;
 };
 
 void Phonebook::display_all_contacts(void) const

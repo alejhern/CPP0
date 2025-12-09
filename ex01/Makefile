@@ -22,7 +22,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp phonebook.hpp
+%.o: %.cpp Phonebook.hpp Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

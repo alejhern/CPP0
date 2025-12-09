@@ -28,18 +28,21 @@ class Contact
 	string _last_name;
 	string _nickname;
 	string _phone_number;
+	string _darkest_secret;
 
   public:
 	Contact(void);
-	Contact(string fn, string ln, string nn, string pn);
+	Contact(string fn, string ln, string nn, string pn, string ds);
 	string get_first_name(void) const;
 	string get_last_name(void) const;
 	string get_nickname(void) const;
 	string get_phone_number(void) const;
+	string get_darkest_secret(void) const;
 	void set_first_name(string fn);
 	void set_last_name(string ln);
 	void set_nickname(string nn);
 	void set_phone_number(string pn);
+	void set_darkest_secret(string ds);
 };
 
 class Phonebook
@@ -51,7 +54,7 @@ class Phonebook
   public:
 	Phonebook(void);
 	void add_contact(const Contact &contact);
-	Contact get_contact(int index);
+	Contact *get_contact(int index);
 	int get_contact_count(void) const;
 	void display_contact(int index) const;
 	void display_all_contacts(void) const;
